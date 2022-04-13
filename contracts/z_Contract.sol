@@ -1,11 +1,25 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.7.0 <0.9.0;
+pragma solidity >=0.7.0;
 
 /**
  * @title JRC_Storage
  * @dev Practice contract for CSE598
  */
+
+ /*
+    Graded Task 1 - name() :            765F7A38	
+    Graded Task 2 - symbol():           C5B8E007	
+    Graded Task 3 - decimals():         18	
+    Graded Task 4 - totalSupply():      21000000	
+    Graded Task 5 - transfer():         0x4DA59FE6c21b33D153dc799EaBCF10076d9F769f	
+    Graded Task 6 - balanceOf() - How much to send:     318392	
+    Graded Task 6 - balanceOf() - Address to send to:   0x9709df3B12d0B3A0A27716F598dDD2C119F37582	
+    Non-Graded Task 7 - approve() - Amount to approve:  91845	
+    Non-Graded Task 7 - approve() - Address to approve:	0xC38be03FEe1404c155002b6D6160e7aac4C6C0e0	
+    Graded Task 8 - allowance():                        91845
+ */
+ 
 contract JRC_Storage {
 
     uint256 number ;
