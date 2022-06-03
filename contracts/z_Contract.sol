@@ -7,19 +7,18 @@ pragma solidity >=0.7.0;
  * @dev Practice contract for CSE598
  */
 
- /*
+  /*
     Graded Task 1 - name() :            765F7A38	
     Graded Task 2 - symbol():           C5B8E007	
     Graded Task 3 - decimals():         18	
     Graded Task 4 - totalSupply():      21000000	
-    Graded Task 5 - transfer():         0x4DA59FE6c21b33D153dc799EaBCF10076d9F769f	
+    Graded Task 5 - transfer() 100:         0x4DA59FE6c21b33D153dc799EaBCF10076d9F769f	
     Graded Task 6 - balanceOf() - How much to send:     318392	
     Graded Task 6 - balanceOf() - Address to send to:   0x9709df3B12d0B3A0A27716F598dDD2C119F37582	
     Non-Graded Task 7 - approve() - Amount to approve:  91845	
     Non-Graded Task 7 - approve() - Address to approve:	0xC38be03FEe1404c155002b6D6160e7aac4C6C0e0	
     Graded Task 8 - allowance():                        91845
  */
- 
 contract JRC_Storage {
 
     uint256 number ;
@@ -34,9 +33,9 @@ contract JRC_Storage {
 
     constructor() {
         creator = msg.sender;
-        _totalSupply = 0; //this number comes from the spreadsheet
-        my_name = "";
-        my_symbol = "";
+        _totalSupply = 21000000; //this number comes from the spreadsheet
+        my_name = "765F7A38";
+        my_symbol = "C5B8E007";
         my_decimals = 0;
         balances[msg.sender] = _totalSupply; 
         emit Transfer(msg.sender, msg.sender, _totalSupply);
@@ -100,9 +99,9 @@ contract JRC_Storage {
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)
     {   
         require(_value <= balances[_from]);
-        require(_value <= approvals[_from][_to]);
+        require(_value <= approvals[_from][msg.sender]);
         
-        approvals[_from][_to] -= _value;
+        approvals[_from][msg.sender] -= _value;
         balances[_from] -= _value;
         balances[_to] += _value;
         emit Transfer(_from, _to, _value);
